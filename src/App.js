@@ -4,7 +4,7 @@ import MuiThemeProvider from "@material-ui/core/styles/MuiThemeProvider";
 import theme from "./components/theme";
 import NavBarComponent from "./components/NavBar/NavBarComponent";
 import MainContainer from "./containers/Main/MainContainer";
-import ConferenceContainer from "./containers/ConferenceContainer/ConferenceContainer";
+import ConferenceContainer from "./containers/Conference/ConferenceContainer";
 import {
   BrowserRouter as Router,
   Switch,
@@ -19,7 +19,6 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
-      <MuiThemeProvider theme={theme}>
         <Router>
           <div className="App">
             <NavBarComponent/>
@@ -30,7 +29,6 @@ function App() {
           </div>
         </Router>
 
-      </MuiThemeProvider>
     </ApolloProvider>
 
   );

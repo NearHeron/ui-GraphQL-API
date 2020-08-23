@@ -1,14 +1,15 @@
-import React from "react";
+import React, {useState} from "react";
 import MainComponent from "../../components/Main/MainComponent";
 import {CONFERENCES} from "../../queries/query";
 import {useQuery} from "@apollo/client";
+import Spinner from "../../components/Spinner/Spinner";
 
 const MainContainer = () => {
   const {loading, data} = useQuery(CONFERENCES);
 
   return (
-    loading? <p>loading...</p>: <MainComponent conferences={data.conferences}/>
+    loading ? <Spinner/> : <MainComponent conferences={data.conferences}/>
   )
-};
+}
 
-export default MainContainer;
+export default MainContainer
